@@ -6,81 +6,76 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: #f2f2f2;
       margin: 0;
       padding: 0;
-      background-color: #f2f2f2;
     }
     header {
-      background-color: #1e90ff;
+      background: #1e90ff;
       color: white;
       padding: 20px;
       text-align: center;
     }
-    .search-box {
-      margin: 30px auto;
-      text-align: center;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 60%;
-      max-width: 500px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .categories {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      margin: 20px;
+      padding: 30px;
     }
-    .category {
-      background-color: white;
-      padding: 20px;
-      width: 150px;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    .product-card {
+      background: white;
       border-radius: 10px;
-      cursor: pointer;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       transition: transform 0.2s;
     }
-    .category:hover {
-      transform: scale(1.05);
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 15px;
+    }
+    .product-info h3 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+    .product-info p {
+      margin: 5px 0;
+      color: #666;
+    }
+    .product-info button {
+      margin-top: 10px;
+      background: #1e90ff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .product-info button:hover {
+      background: #0077cc;
     }
     footer {
       background-color: #1e90ff;
       color: white;
       text-align: center;
       padding: 15px;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>BuySell</h1>
-    <p>Your local classifieds platform</p>
-  </header>
+<header>
+  <h1>BuySell</h1>
+  <p>Your local classifieds platform</p>
+</header>
 
-  <div class="search-box">
-    <input type="text" placeholder="Search for products, categories..." />
-  </div>
-
-  <div class="categories">
-    <div class="category">📱 Mobile</div>
-    <div class="category">💻 Laptop</div>
-    <div class="category">🚗 Cars</div>
-    <div class="category">🏠 Properties</div>
-    <div class="category">💼 Jobs</div>
-    <div class="category">🎮 Electronics</div>
-  </div>
-
-  <footer>
-    &copy; 2025 BuySell | Made with ❤️ in Bangladesh
-  </footer>
-
-</body>
-</html>
+<div class="product-grid">
+  <div class="product-card">
+    <img
